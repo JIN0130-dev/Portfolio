@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-dark text-light font-sans;
+  cursor: none;
+}
+/* index.css */
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg,#111,#1a1a1a,#ff4500,#000);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+.bg-moving {
+  background-image: url("/tech-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  animation: moveBackground 35s linear infinite;
+  opacity: 0.35;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+.neon-text {
+  color: #fff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff,
+    0 0 80px #0ff;
+}
+
+/* Glow animation */
+@keyframes neonGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #0ff,
+      0 0 80px #0ff;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #0ff,
+      0 0 60px #0ff,
+      0 0 100px #0ff;
+  }
+}
+
+.neon-animated {
+  animation: neonGlow 1.5s infinite alternate;
+}
